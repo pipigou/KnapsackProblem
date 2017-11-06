@@ -12,9 +12,31 @@ public class DPKnapsack {
         }
     }
 
-    static void printoOptimal(int n, int w) {
-
-    }
+//   static void getTheSelect(int[][] K, int [] val, int [] wt) {
+//       int i, j;
+//       i = K.length-1;
+//       j = K[0].length-1;
+////
+////        /*while(i>0 && j>0)
+////
+////            do if(F[i][j]=F[i-1][j-C[i]]+W[i])
+////
+////                then Print W[i]
+////
+////        j←j-C[i]
+////
+////        i←i-1*/
+////
+//       while (i > 0 && j > 0){
+//           System.out.println(wt.length);
+//            if (K[i][j] == K[i - 1][j - val[i+1]] + wt[i+1])
+//                System.out.print(wt[i]);
+//
+//            j = j - val[i];
+//            i = i - 1;
+//        }
+//
+//    }
 
     /**
      *
@@ -42,6 +64,8 @@ public class DPKnapsack {
         printResultMetrix(K);
 
         // 最优方案
+       //getTheSelect(K, val, wt);
+
 
 
         System.out.print("最大效益值为：" + K[n][W]);

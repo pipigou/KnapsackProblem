@@ -41,7 +41,7 @@ public class GreedKnapsack {
         int cW = 0;
         int cB = 0;
 
-        System.out.print("\n下面的选择可以考虑： ");
+        System.out.print("下面的选择可以考虑： ");
         while (cW < W) {
             int item = getNext();
             if (item == -1) {

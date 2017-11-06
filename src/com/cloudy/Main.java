@@ -10,6 +10,7 @@ public class Main {
         // System.out.println(DPKnapsack.knapSack(M, wt, val, n));
         DPKnapsack.knapSack(M, wt, val, n);
 
+        System.out.println("\n===================贪心算法===================");
         GreedKnapsack knapsack = new GreedKnapsack(wt, val, val.length);
         knapsack.fill();
     }
