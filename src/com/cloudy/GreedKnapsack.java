@@ -6,18 +6,16 @@ public class GreedKnapsack {
     int weight[];
     int benefit[];
     double ratio[];
-    // final int W = 45;
-    int W;
-    GreedKnapsack(int[] wt, int[] val, int M, int nItems) {
+    final int W = 45;
+    GreedKnapsack(int[] wt, int[] val,int nItems) {
         Scanner scan = new Scanner(System.in);
         ratio = new double[nItems];
         weight = wt;
         benefit = val;
 
         for (int i = 0; i < nItems; ++i) {
-            ratio[i] = (double)benefit[i] / weight[i];
+            ratio[i] = (double) benefit[i] / weight[i];
         }
-        W = M;
     }
 
     int getNext() {
@@ -36,7 +34,7 @@ public class GreedKnapsack {
         int cW = 0;
         int cB = 0;
 
-        System.out.print("\nItems considered: ");
+        System.out.print("\n下面的选择可以考虑： ");
         while (cW < W) {
             int item = getNext();
             if (item == -1) {
@@ -48,15 +46,14 @@ public class GreedKnapsack {
             if (cW + weight[item] <= W) {
                 cW += weight[item];
                 cB += benefit[item];
-                //mark as used for the getNext() (ratio) function
                 ratio[item] = 0;
             } else {
                 cB += (ratio[item] * (W - cW));
                 cW += (W - cW);
-                break;  //the knapsack is full
+                break;  // 背包满了
             }
         }
-        System.out.println("\nMax Benefit = " + cB + ", Max Weight = " + cW);
+        System.out.println("\n最大效益值为： " + cB + ", 背包重量为： " + cW);
     }
 
 }
