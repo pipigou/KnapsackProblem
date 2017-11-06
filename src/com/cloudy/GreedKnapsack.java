@@ -7,6 +7,13 @@ public class GreedKnapsack {
     int benefit[];
     double ratio[];
     final int W = 45;
+
+    /**
+     *
+     * @param wt 物品重量
+     * @param val 物品价值
+     * @param nItems 数组长度
+     */
     GreedKnapsack(int[] wt, int[] val,int nItems) {
         Scanner scan = new Scanner(System.in);
         ratio = new double[nItems];
@@ -38,7 +45,7 @@ public class GreedKnapsack {
         while (cW < W) {
             int item = getNext();
             if (item == -1) {
-                //No items left
+                //没有剩余物品了
                 break;
             }
 
