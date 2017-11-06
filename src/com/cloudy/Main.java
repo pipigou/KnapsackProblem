@@ -10,6 +10,7 @@ public class Main {
         // System.out.println(DPKnapsack.knapSack(M, wt, val, n));
         DPKnapsack.knapSack(M, wt, val, n);
 
-        GreedKnapsack.getResult(wt, val, 45);
+        GreedKnapsack knapsack = new GreedKnapsack(wt, val, val.length);
+        knapsack.fill();
     }
 }
