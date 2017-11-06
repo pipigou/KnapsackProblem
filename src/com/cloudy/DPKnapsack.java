@@ -6,7 +6,7 @@ public class DPKnapsack {
     static void printResultMetrix(int [][] K){
         for (int [] N : K){
             for (int item : N){
-                System.out.print(item + " ");
+                System.out.print(item + "\t");
             }
             System.out.println();
         }
@@ -50,7 +50,7 @@ public class DPKnapsack {
         int i, w;
         int K[][] = new int[n + 1][W + 1];
 
-        // Build table K[][] in bottom up manner
+        // 完成矩阵
         for (i = 0; i <= n; i++) {
             for (w = 0; w <= W; w++) {
                 if (i == 0 || w == 0)
@@ -62,11 +62,6 @@ public class DPKnapsack {
             }
         }
         printResultMetrix(K);
-
-        // 最优方案
-       //getTheSelect(K, val, wt);
-
-
 
         System.out.print("最大效益值为：" + K[n][W]);
 
