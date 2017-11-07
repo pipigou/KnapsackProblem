@@ -20,11 +20,13 @@ public class GreedKnapsack {
         weight = wt;
         benefit = val;
 
+        // 计算单位价值量
         for (int i = 0; i < nItems; ++i) {
             ratio[i] = (double) benefit[i] / weight[i];
         }
     }
 
+    // 获得物品中存的单位价值量最高的物品索引
     int getNext() {
         double highest = 0;
         int index = -1;
@@ -37,6 +39,7 @@ public class GreedKnapsack {
         return index;
     }
 
+    // 将物品放入背包
     void fill() {
         int cW = 0;
         int cB = 0;

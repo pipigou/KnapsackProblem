@@ -12,31 +12,18 @@ public class DPKnapsack {
         }
     }
 
-//   static void getTheSelect(int[][] K, int [] val, int [] wt) {
-//       int i, j;
-//       i = K.length-1;
-//       j = K[0].length-1;
-////
-////        /*while(i>0 && j>0)
-////
-////            do if(F[i][j]=F[i-1][j-C[i]]+W[i])
-////
-////                then Print W[i]
-////
-////        j←j-C[i]
-////
-////        i←i-1*/
-////
-//       while (i > 0 && j > 0){
-//           System.out.println(wt.length);
-//            if (K[i][j] == K[i - 1][j - val[i+1]] + wt[i+1])
-//                System.out.print(wt[i]);
-//
-//            j = j - val[i];
-//            i = i - 1;
-//        }
-//
-//    }
+    // 得到问题解决策略
+    static void getTheBestSolution(int[][] k, int n, int w, int[] wt, int[] val) {
+        int m = n;
+        int h = w;
+        while(m > 0 && h > 0) {
+            if (k[m][h] == (k[m-1][h - wt[m-1]] + val[m-1])){
+                System.out.print(m + " ");
+                h -= wt[m-1];
+            }
+            m--;
+        }
+    }
 
     /**
      *
@@ -61,8 +48,23 @@ public class DPKnapsack {
                     K[i][w] = K[i - 1][w];
             }
         }
+
         printResultMetrix(K);
 
+        System.out.print("下面的选择可以考虑：");
+        getTheBestSolution(K, n, W, wt, val);
+
+//        int m = n;
+//        int h = W;
+//        while(m > 0 && h > 0) {
+//            if (K[m][h] == (K[m-1][h - wt[m-1]] + val[m-1])){
+//                System.out.print(m + " ");
+//                h -= wt[m-1];
+//            }
+//            m--;
+//        }
+
+        System.out.println();
         System.out.print("最大效益值为：" + K[n][W]);
 
     }
